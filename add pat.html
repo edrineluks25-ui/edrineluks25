@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Ads Bot | Smart Advertising</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #171717;
+  background: #ffffff;
+}
+
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.96),
+      rgba(255,255,255,.87),
+      rgba(255,255,255,.70)
+    ),
+    url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=85");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 7%;
+  border-bottom: 1px solid #e5e5e5;
+  background: rgba(255,255,255,.94);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #111111;
+}
+
+nav a {
+  color: #333333;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #777777;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.intro {
+  padding: 65px 0 35px;
+  max-width: 760px;
+}
+
+.tag {
+  color: #555555;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 65px);
+  margin: 20px 0;
+  line-height: 1.08;
+  color: #111111;
+}
+
+h1 span {
+  color: #666666;
+}
+
+.intro p {
+  color: #404040;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-bottom: 60px;
+}
+
+.panel {
+  background: rgba(255,255,255,.97);
+  border: 1px solid #dedede;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.09);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #171717;
+}
+
+label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 14px;
+  color: #333333;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  color: #171717;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #555555;
+  box-shadow: 0 0 0 2px #eeeeee;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+button {
+  border: none;
+  padding: 13px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 18px;
+  transition: .2s;
+}
+
+.primary {
+  background: #171717;
+  color: #ffffff;
+  width: 100%;
+}
+
+.primary:hover {
+  background: #444444;
+}
+
+.secondary {
+  background: #f3f3f3;
+  color: #171717;
+  border: 1px solid #cccccc;
+  margin-right: 8px;
+}
+
+.secondary:hover {
+  background: #e5e5e5;
+}
+
+.result {
+  min-height: 250px;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: #292929;
+  overflow-wrap: anywhere;
+}
+
+.small {
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.status {
+  padding: 12px;
+  border-radius: 7px;
+  background: #f1f1f1;
+  color: #292929;
+  font-size: 13px;
+  margin-top: 15px;
+  border: 1px solid #e2e2e2;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #171717;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+@media(max-width: 750px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="hero">
+
+<nav>
+  <div class="logo">AI ADS BOT</div>
+  <div>
+    <a href="#create">Create Ads</a>
+    <a href="#results">Results</a>
+  </div>
+</nav>
+
+<main class="container">
+<section class="intro">
+  <div class="tag">SMART DIGITAL ADVERTISING</div>
+
+  <h1>
+    Create Better Ads.<br>
+    Reach More People.<br>
+    <span>Grow Your Business.</span>
+  </h1>
+
+  <p>
+    Your advertising assistant for businesses, shops,
+    restaurants, churches, events, products and services.
+    Create promotional text and prepare it for your preferred
+    advertising platform.
+  </p>
+</section>
+
+<section class="dashboard" id="create">
+
+<div class="panel">
+<h2>Create Your Advertisement</h2>
+
+<form id="adForm">
+  <label for="business">Business or organisation name</label>
+  <input id="business" placeholder="e.g. Edrine Digital Services" required>
+
+  <label for="type">Type of advertisement</label>
+  <select id="type">
+    <option>Business promotion</option>
+    <option>Product advertisement</option>
+    <option>Church or ministry event</option>
+    <option>Restaurant or food</option>
+    <option>Real estate</option>
+    <option>Education and training</option>
+    <option>Fashion and beauty</option>
+    <option>Technology services</option>
+    <option>Event promotion</option>
+    <option>Job or recruitment notice</option>
+    <option>Other service</option>
+  </select>
+
+  <label for="platform">Advertising platform</label>
+  <select id="platform">
+    <option>Facebook</option>
+    <option>Instagram</option>
+    <option>Google Ads</option>
+    <option>WhatsApp</option>
+    <option>TikTok</option>
+    <option>All platforms - adapt copy</option>
+  </select>
+
+  <label for="product">Product or service</label>
+  <input id="product" placeholder="What are you promoting?" required>
+
+  <label for="audience">Target audience</label>
+  <input id="audience" placeholder="e.g. customers in Uganda">
+
+  <label for="offer">Price, offer or contact details</label>
+  <input id="offer" placeholder="Price, offer or phone number">
+
+  <label for="tone">Advertising style</label>
+  <select id="tone">
+    <option>Professional</option>
+    <option>Creative and exciting</option>
+    <option>Friendly</option>
+    <option>Luxury</option>
+    <option>Urgent promotion</option>
+  </select>
+
+  <button class="primary" type="submit">
+    Generate Advertisement
+  </button>
+</form>
+
+<p class="small">
+This version creates draft advertisement text in your browser.
+Connecting a real AI service requires a secure backend.
+</p>
+</div>
+
+<div class="panel" id="results">
+<h2>Your Advertisement</h2>
+
+<div id="output" class="result">Your advertisement will appear here.
+
+Fill in the form and click
+"Generate Advertisement" to begin.</div>
+
+<button class="secondary" id="copyBtn" type="button">
+Copy Advertisement
+</button>
+
+<button class="secondary" id="downloadBtn" type="button">
+Download Text
+</button>
+
+<div class="status">
+<strong>Publishing status:</strong> Draft only — not published.
+</div>
+
+<button class="primary" id="whatsappBtn" type="button">
+Prepare WhatsApp Message
+</button>
+
+<p class="small">
+Review your advertisement before publishing. The advertiser
+pays their own advertising budget directly to the platform.
+</p>
+</div>
+
+</section>
+</main>
+</div>
+
+<footer>
+AI Ads Bot | Smart Advertising Tools
+</footer>
+
+<script>
+const form = document.getElementById("adForm");
+const output = document.getElementById("output");
+let currentAd = "";
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const business = document.getElementById("business").value.trim();
+  const type = document.getElementById("type").value;
+  const platform = document.getElementById("platform").value;
+  const product = document.getElementById("product").value.trim();
+  const audience = document.getElementById("audience").value.trim();
+  const offer = document.getElementById("offer").value.trim();
+  const tone = document.getElementById("tone").value;
+
+  if (!business || !product) {
+    alert("Enter your business name and product or service.");
+    return;
+  }
+
+  const styles = {
+    "Professional": [
+      "Quality You Can Trust",
+      "Looking for reliable solutions? We are ready to help."
+    ],
+    "Creative and exciting": [
+      "Something Amazing Is Here!",
+      "Discover something exciting and see what we can do for you."
+    ],
+    "Friendly": [
+      "We Are Here for You!",
+      "Your needs matter to us. Let us help you today."
+    ],
+    "Luxury": [
+      "Experience Excellence",
+      "Discover quality and an experience designed for you."
+    ],
+    "Urgent promotion": [
+      "Take the Next Step Today!",
+      "Contact us today to learn more about our offer."
+    ]
+  };
+
+  const [headline, opening] = styles[tone];
+
+  currentAd =
+`${headline}
+
+${business}
+
+${opening}
+
+Discover our ${product}!
+
+Category: ${type}
+${audience ? "Target audience: " + audience + "\n" : ""}${offer ? "Price / offer / contact: " + offer + "\n" : ""}
+Contact ${business} today to learn more!
+
+#${business.replace(/[^a-z0-9]/gi, "")}
+#Advertising #BusinessGrowth
+
+Platform: ${platform}
+Style: ${tone}
+
+Review all details before publishing.`;
+
+  output.textContent = currentAd;
+});
+
+document.getElementById("copyBtn").addEventListener("click", async () => {
+  if (!currentAd) {
+    alert("Generate an advertisement first.");
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(currentAd);
+    alert("Advertisement copied!");
+  } catch {
+    const area = document.createElement("textarea");
+    area.value = currentAd;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand("copy");
+    area.remove();
+    alert("Advertisement copied!");
+  }
+});
+
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  if (!currentAd) {
+    alert("Generate an advertisement first.");
+    return;
+  }
+
+  const file = new Blob([currentAd], {
+    type: "text/plain;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "my-advertisement.txt";
+  link.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById("whatsappBtn").addEventListener("click", () => {
+  if (!currentAd) {
+    alert("Generate an advertisement first.");
+    return;
+  }
+
+  const message = encodeURIComponent(
+    "Please review this advertisement:\n\n" + currentAd
+  );
+
+  window.open("https://wa.me/?text=" + message, "_blank");
+});
+</script>
+</body>
+</html>
